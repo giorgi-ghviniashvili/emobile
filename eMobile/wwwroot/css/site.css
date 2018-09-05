@@ -1,0 +1,54 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.border-left-dashed {
+    border-left: 2px dashed #666;
+}
+
+.filter-row {
+    margin-bottom: 10px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.inline {
+    display: inline-flex;
+}
+
+.m-r-10 {
+    margin-right: 10%;
+}
+
+.tile {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.tile:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.tile-container {
+    padding: 2px 16px 16px 16px;
+}
+
+.tile-row {
+    padding-bottom: 30px;
+}

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMobile", "eMobile\eMobile.csproj", "{B6B74802-8775-4967-8667-6F979AAF78E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{5A86E1AB-A3FD-4AFD-9143-B334DA074749}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{ADAAE93E-341B-4CFB-A522-CB27495D13E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6B74802-8775-4967-8667-6F979AAF78E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6B74802-8775-4967-8667-6F979AAF78E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6B74802-8775-4967-8667-6F979AAF78E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6B74802-8775-4967-8667-6F979AAF78E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A86E1AB-A3FD-4AFD-9143-B334DA074749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A86E1AB-A3FD-4AFD-9143-B334DA074749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A86E1AB-A3FD-4AFD-9143-B334DA074749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A86E1AB-A3FD-4AFD-9143-B334DA074749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADAAE93E-341B-4CFB-A522-CB27495D13E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAAE93E-341B-4CFB-A522-CB27495D13E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAAE93E-341B-4CFB-A522-CB27495D13E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAAE93E-341B-4CFB-A522-CB27495D13E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F421694-A947-4CC5-9E54-A92398EC098C}
+	EndGlobalSection
+EndGlobal

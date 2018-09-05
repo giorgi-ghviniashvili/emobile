@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/css/simplePagination.css" />
+<div class="row">
+    <div class="col-md-3">
+        <div class="filter-row">
+            <input class="form-control" id="name" placeholder="დასახელება" />
+        </div>
+        <div class="filter-row">
+            <input class="form-control" id="manufacturer" placeholder="მწარმოებელი" />
+        </div>
+        <div class="filter-row inline">
+            <div class="w-50">
+                <input type="number" class="form-control" id="priceFrom" placeholder="ფასი-დან" />
+            </div>
+            <div class="w-50">
+                <input type="number" class="form-control col-md-6" id="priceTo" placeholder="ფასი-მდე" />
+            </div>
+        </div>
+        <div class="filter-row">
+            <input type="button" id="search" class="btn btn-success form-control" value="ძებნა"/>
+        </div>
+    </div>
+    <div class="col-md-9 border-left-dashed">
+        <div id="phones"></div>
+        <div id="pagination"></div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/jquery.simplePagination.js"></script>
+    <script>
+        $(document).ready(function () {
+            search();
+            $('#search').click(search);
+            function search() {
+                let dataObj = {
+                    pageNum: 1
+                };
+
+                let filterValues = parseFilters();
+
+                Object.keys(filterValues).forEach(key => {
+                    if (filterValues[key] !== '') {
+                        dataObj[key] = filterValues[key];
+                    }
+                });
+
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("GetPhonesPartial", "Home")',
+                    data: dataObj,
+                    success: function (response) {
+                        $('#phones').html(response);
+                    }
+                });
+            }
+
+            function parseFilters() {
+                return {
+                    priceFrom: $('#priceFrom').val(),
+                    priceTo: $('#priceTo').val(),
+                    manufacturer: $('#manufacturer').val(),
+                    name: $('#name').val()
+                };
+            }
+        });
+    </script>
+}
