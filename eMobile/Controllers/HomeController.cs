@@ -24,25 +24,50 @@ namespace eMobile.Controllers
         /// <param name="priceFrom">start price</param>
         /// <param name="priceTo">end price</param>
         /// <returns>returns partial view of mobile cards</returns>
-        public IActionResult GetPhonesPartial(Int32 pageNum, String name, String manufacturer = null, Double? priceFrom = null, Double? priceTo = null)
+        public IActionResult GetPhonesPartial(Int32 pageNum, 
+                                              String name, 
+                                              String manufacturer = null, 
+                                              Double? priceFrom = null, 
+                                              Double? priceTo = null, 
+                                              Int32 itemsPerPage = 10)
         {
-            var searcher = new SearchHandler();
-
-            var phones = searcher.Search(pageNum, name, manufacturer, priceFrom, priceTo);
-
-            var phoneModels = new List<PhoneModel>();
-
-            foreach (var phone in phones)
+            try
             {
-                phoneModels.Add(new PhoneModel(phone));
-            }
+                var searcher = new SearchHandler();
 
-            return PartialView("_PhonesPartial", phoneModels);
+                var phones = searcher.Search(pageNum, name, manufacturer, priceFrom, priceTo, itemsPerPage);
+
+                var phoneModels = new List<PhoneModel>();
+
+                foreach (var phone in phones.Values)
+                {
+                    phoneModels.Add(new PhoneModel(phone));
+                }
+
+                ViewBag.TotalCount = phones.Count;
+
+                return PartialView("_PhonesPartial", phoneModels);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error");
+            }
         }
 
         public IActionResult PhoneDetails(Int32 id)
         {
-            return View();
+            try
+            {
+                var searcher = new SearchHandler();
+
+                var model = searcher.GetSingleItem(id);
+
+                return View(new PhoneModel(model));
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error");
+            }
         }
 
         public IActionResult Privacy()

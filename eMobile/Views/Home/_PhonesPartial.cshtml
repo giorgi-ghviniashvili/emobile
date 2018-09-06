@@ -4,6 +4,8 @@
     Layout = null;
 }
 
+<input type="hidden" id="totalCount" value="@ViewBag.TotalCount" />
+
 @for(var i = 0; i < Model.Count(); i += 3)
 {
 <div class="row">
@@ -11,9 +13,9 @@
     {
         <div class="col-md-4 tile-row">
             <div class="tile">
-                <img src="~/images/@Model[j].ImagePath" alt="Avatar" style="width:100%; height: 262px;">
+                <img src="~/images/@Model[j].ImagePath" alt="Avatar" class="image-small">
                 <div class="tile-container">
-                    <h4><a href="@Url.Action("PhoneDetails", "Home")/@Model[j].Id" target="_blank">@Model[j].Name</a></h4>
+                    <h4><a class="title" href="@Url.Action("PhoneDetails", "Home")/@Model[j].Id" target="_blank">@Model[j].Name</a></h4>
                     <div>
                         <button type="button" class="btn btn-success w-100">@Model[j].Price ლარი</button>
                     </div>

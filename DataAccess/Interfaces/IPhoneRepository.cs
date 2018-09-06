@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using DataAccess.Entities;
+using DataAccess.Repositories;
 
 namespace DataAccess.Interfaces
 {
@@ -16,7 +17,7 @@ namespace DataAccess.Interfaces
 
         List<Phone> Find(Expression<Func<Phone, bool>> expression);
 
-        List<Phone> GetPhonesByPage(int pageNumber, 
+        Pagination<Phone> GetPhonesByPage(int pageNumber, 
                                     String name = null, 
                                     String manufacturer = null, 
                                     Double? priceFrom = null, 

@@ -37,7 +37,7 @@ namespace DataAccess.Repositories
             }
         }
 
-        public List<Phone> GetPhonesByPage(Int32 pageNumber, 
+        public Pagination<Phone> GetPhonesByPage(Int32 pageNumber, 
                                            String name = null, 
                                            String manufacturer = null, 
                                            Double? priceFrom = null, 
@@ -68,10 +68,13 @@ namespace DataAccess.Repositories
                     query = query.Where(x => x.Price <= priceTo);
                 }
 
+                var count = query.Count();
+
                 query = query.OrderBy(x => x.Id)
                    .Skip((pageNumber - 1) * phonesPerPage)
                    .Take(phonesPerPage);
-                return query.ToList();
+
+                return new Pagination<Phone>(query.ToList(), count);
             }
         }
 

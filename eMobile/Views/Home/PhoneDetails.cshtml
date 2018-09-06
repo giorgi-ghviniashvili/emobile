@@ -1,8 +1,49 @@
-﻿
+﻿@model PhoneModel
 @{
     ViewData["Title"] = "PhoneDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>PhoneDetails</h2>
+<div class="row">
+    <h2 class="title">@Model.Name</h2>
+</div>
 
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/images/@Model.ImagePath" class="image-big"/>
+    </div>
+    <div class="col-md-8 details border-left-dashed">
+        <div class="row">
+            <div class="col-md-4">აღწერილობა:</div>
+            <div class="col-md-8">@Model.Description</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">მწარმოებელი:</div>
+            <div class="col-md-8">@Model.Manufacturer</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">ოპერაციული სისტემა:</div>
+            <div class="col-md-8">@Model.OsName</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">შიდა მეხსიერება:</div>
+            <div class="col-md-8">@Model.Storage</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">ოპერატიული მეხსიერება:</div>
+            <div class="col-md-8">@Model.Ram</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">ზომა:</div>
+            <div class="col-md-8">@Model.Size</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">წონა:</div>
+            <div class="col-md-8">@Model.Weight გრ.</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">ფასი:</div>
+            <div class="col-md-8 price-banner">@Model.Price ლარი.</div>
+        </div>
+    </div>
+</div>
